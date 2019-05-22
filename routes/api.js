@@ -1,5 +1,5 @@
 let request = require('request-promise')
-module.exports = () => {
+module.exports = jobs => {
   var options = {
     method: 'POST',
     url: 'https://api.sendgrid.com/v3/mail/send',
@@ -11,10 +11,10 @@ module.exports = () => {
     body: {
       personalizations: [
         {
-          to: [
-            { email: 'balkrushna@vrlabtech.com', name: 'xyz' },
-            { email: 'kiran2bhalerao@gmail.com', name: 'Kiran' }
-          ],
+          to: [{ email: 'balkrushna@vrlabtech.com', name: 'xyz' }],
+          dynamic_template_data: {
+            item: 'node dev'
+          },
           subject: 'Hello, World!'
         }
       ],
