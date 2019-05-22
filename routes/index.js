@@ -19,7 +19,7 @@ router.get('/job/mail', async (req, res) => {
   difference = _.differenceWith(newJobs, newId, _.isEqual)
   if (difference.length > 0) {
     let diff = await JobId.collection.insertMany(difference)
-    await api()
+    await api(difference)
   }
 
   res.send(difference)
