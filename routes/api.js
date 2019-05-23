@@ -13,9 +13,12 @@ module.exports = jobs => {
     body: {
       personalizations: [
         {
-          to: [{ email: 'balkrushna@vrlabtech.com', name: 'xyz' }],
+          to: [
+            { email: 'balkrushna@vrlabtech.com', name: 'xyz' },
+            { email: 'hdtv7180@gmail.com', name: 'Bala' }
+          ],
           dynamic_template_data: {
-            jobs: jobs
+            jobs
           },
           subject: 'Hello, World!'
         }
@@ -32,6 +35,6 @@ module.exports = jobs => {
       console.log(res)
     })
     .catch(er => {
-      console.log(er.message)
+      console.log(er)
     })
 }
