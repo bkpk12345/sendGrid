@@ -23,8 +23,8 @@ module.exports = jobs => {
           subject: 'Hello, World!'
         }
       ],
-      from: { email: 'bkpk7745@gmail.com', name: 'Mark z' },
-      reply_to: { email: 'bkpk7745@gmail.com', name: 'John Doe' },
+      from: { email: 'balkrushna@vrlabtech.com', name: 'BK' },
+      reply_to: { email: 'balkrushna@vrlabtech.com', name: 'BK' },
       template_id: 'd-c037f60cbd074f2b9d43819c01481be5'
     },
     json: true
