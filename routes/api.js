@@ -1,4 +1,6 @@
+let jobs = require('../opp.json')
 let request = require('request-promise')
+// console.log(jobs.job)
 module.exports = jobs => {
   var options = {
     method: 'POST',
@@ -13,12 +15,12 @@ module.exports = jobs => {
         {
           to: [{ email: 'balkrushna@vrlabtech.com', name: 'xyz' }],
           dynamic_template_data: {
-            item: 'node dev'
+            jobs: jobs
           },
           subject: 'Hello, World!'
         }
       ],
-      from: { email: 'bkpk7745@gmail.com', name: 'Balkrushna' },
+      from: { email: 'bkpk7745@gmail.com', name: 'Mark z' },
       reply_to: { email: 'bkpk7745@gmail.com', name: 'John Doe' },
       template_id: 'd-c037f60cbd074f2b9d43819c01481be5'
     },

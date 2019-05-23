@@ -4,7 +4,8 @@ const { Schema } = mongoose
 module.exports = mongoose.model(
   'jobId',
   new Schema({
-    identifier: String
+    identifier: String,
+    title: String
   }),
   'jobId'
 )
