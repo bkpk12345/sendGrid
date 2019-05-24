@@ -1,5 +1,5 @@
-const express = require('express')
-const router = express.Router()
+// const express = require('express')
+// const router = express.Router()
 const cron = require('node-cron')
 const _ = require('lodash')
 const Jobs = require('../models/jobs')
@@ -9,7 +9,8 @@ let difference,
   newDiff = [],
   diff
 
-router.get('/job/mail', async (req, res) => {
+// router.get('/job/mail', async (req, res) => {
+module.exports.cronExec = () => {
   cron.schedule('*/10 * * * * *', async () => {
     let jobs = await Jobs.find()
     let newJobs = _.map(jobs, _.partialRight(_.pick, ['identifier', 'title']))
@@ -26,6 +27,7 @@ router.get('/job/mail', async (req, res) => {
       )
     }
   })
-  res.send(difference)
-})
-module.exports = router
+}
+//   res.send(difference)
+// })
+// module.exports = router
